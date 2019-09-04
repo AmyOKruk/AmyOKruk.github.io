@@ -1,0 +1,465 @@
+
+
+body {
+	margin:auto;
+	padding:50px 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.serif {
+	font-family: 'Lora', serif;
+}
+.sans-serif {
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* choose a light or dark theme to add to the body tag. */
+.dark-theme {
+    background-color: #151515;
+    color: #fbfbfb;
+}
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+.header {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+/* .top {
+background: url('../images/alien-background.png');
+background-size: cover;
+} */
+
+.story-body, .header, .chart-section, .footer {
+	margin:auto;
+	max-width: 700px;
+}
+
+.footer {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.chart-section.wide{
+	width:100%;
+	max-width:1200px;
+}
+
+.chart-section.wide p.chart-title {
+	width:100%;
+	max-width:700px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.chart-section.wide p.chart-subhead {
+	width:100%;
+	max-width:700px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+/* text styles */
+
+p.kicker {
+	font-size:1rem;
+	text-transform:uppercase;
+}
+
+.text-center {
+	text-align:center;
+}
+
+h1.headline {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
+    font-weight: 800;
+}
+
+h2.subhead {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-bottom:0;
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+p.body-text, article p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+ 	margin-top:0;
+ 	margin-bottom:15px;
+}
+
+h3.section-head {
+	font-size:2rem;
+	margin:40px 0 10px 0;
+	font-weight:700;
+	line-height:1.3;
+}
+
+.byline {
+    font-size: 1.1rem;
+    line-height: 0.75;
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 0.85rem;
+    line-height: 1;
+    margin-top: 10px;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+}
+
+
+p.note {
+	font-size:0.85rem;
+}
+
+/* chart styles */
+
+.story-body .chart-section {
+	padding-top:0px;
+}
+
+
+.chart-row {
+	display:flex;
+	justify-content: space-between;
+	margin-top:20px;
+}
+
+p.chart-title {
+	font-size:1.5rem;
+	font-weight:700;
+	max-width:700px;
+	margin:30px auto 5px auto;
+}
+p.chart-subhead {
+	margin:0 auto;
+	max-width:700px;
+	font-size:1rem;
+	margin-bottom:15px;
+}
+
+p.chart-label {
+	margin:0 0 5px 0;
+	font-size:0.85rem;
+	text-transform:uppercase;
+	font-weight:600;
+}
+
+.chart-row .chart {
+	width:100%;
+	padding-right:15px;
+	min-width:calc(25% - 15px);
+
+}
+
+p.chart-source {
+	font-size:0.85rem;
+	margin:0;
+}
+
+/* photos */
+
+.photo-section {
+	padding:30px 0px;
+	width:100%;
+	margin:auto;
+	display:flex;
+	max-width:1200px;
+}
+
+.photo {
+	width:100%;
+	padding-right:15px;
+}
+.photo img {
+	width:100%;	
+}
+
+p.caption {
+	font-size:0.9rem;
+	margin:0;
+}
+
+
+
+/* mobile */
+
+@media (max-width:700px) {
+
+	.chart-row {
+		display:block;
+	}
+
+	.chart-row .chart {
+		padding:0;
+	}
+
+	.photo-section {
+		display:block;
+	}
+	.photo {
+		padding:0;
+	}
+
+}
+
+/* Amy's experiment */
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  @media screen and (min-width: 590px) {
+    section {
+	  flex-direction: row;
+	  margin-bottom: 5rem;
+	}
+  }
+  section > * {
+    flex: 1;
+  }
+  article {
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: 590px) {
+    article p {
+      margin: 0;
+    }
+  }
+  @media screen and (min-width: 590px) {
+    article p:not(:last-of-type) {
+      min-height: 50vh;
+    }
+  }
+  figure {
+    align-items: flex-start;
+    align-self: flex-start;
+    /* background-color: #daf7a6; */
+    display: flex;
+    height: 12rem;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    top: 3rem;
+  }
+
+  figure img {
+	width: 100%;
+  }
+
+  @media screen and (min-width: 590px) {
+    figure {
+      position: sticky;
+		}
+  }
+
+#constellation-chart {
+	text-align: left;
+}
+
+.chart img {
+	width: 100%;
+}
+
+.gif {
+	max-width: 900px;
+	margin: auto;
+}
+
+.gif img {
+	width:100%;
+}
+
+.container {
+	width: 100%;
+	max-width: 700px;
+	margin: auto;
+	padding-top: 5%;
+}
+
+.sender {
+	display: block;
+	font-size: 0.8rem;
+	text-align: right;
+	line-height:29px;
+}
+
+.name {
+	font-weight:700;	
+}
+
+#g-ai1-2 {
+	top: 4.2%;
+	left: 91.5%;
+}
+
+@media screen and (max-width: 550px) {
+	#g-ai1-2 {
+		top: 3.2%;
+		left: 90.5%;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	#g-ai1-2 {
+		top: 3.8%;
+		left: 90.5%;
+	}
+}
+
+.header-image {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 3%;
+
+}
+
+.header-image img {
+	width: 275px;
+}
+
+#alien-heads {
+	width: 400px;
+}
+
+/* ai2html */
+
+#g-constellation_master_copy_small-box .g-artboard2 {
+	margin:0 auto;
+}
+#g-constellation_master_copy_small-box p {
+	margin:0;
+}
+.g-aiAbs {
+	position:absolute;
+}
+.g-aiImg {
+	display:block;
+	width:100% !important;
+}
+.g-aiSymbol {
+	position: absolute;
+	box-sizing: border-box;
+}
+.g-aiPointText p { white-space: nowrap; }
+#g-constellation_master_copy_small-Artboard_1 {
+	position:relative;
+	overflow:hidden;
+}
+#g-constellation_master_copy_small-Artboard_1 p {
+	font-weight:700;
+	font-size:20px;
+	line-height:29px;
+	filter:alpha(opacity=100);
+	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity:1;
+	letter-spacing:0em;
+	text-align:left;
+	color:rgb(0,0,0);
+	text-transform:none;
+	padding-bottom:0;
+	padding-top:0;
+	mix-blend-mode:normal;
+	font-style:normal;
+	height:auto;
+	position:static;
+	width: 300px;
+}
+#g-constellation_master_copy_small-Artboard_1 .g-pstyle0 {
+	text-align:center;
+}
+
+/* countries graph */
+
+#g-countries_graph2-box .g-artboard {
+	margin:0 auto;
+}
+#g-countries_graph2-box p {
+	margin:0;
+}
+.g-aiAbs {
+	position:absolute;
+}
+.g-aiImg {
+	display:block;
+	width:100% !important;
+}
+.g-aiSymbol {
+	position: absolute;
+	box-sizing: border-box;
+}
+.g-aiPointText p { white-space: nowrap; }
+#g-countries_graph2-Artboard_1 {
+	position:relative;
+	overflow:hidden;
+}
+#g-countries_graph2-Artboard_1 p {
+	font-weight:500;
+	font-size:18px;
+	line-height:21px;
+	filter:alpha(opacity=100);
+	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity:1;
+	letter-spacing:0em;
+	text-align:left;
+	color:rgb(0,0,0);
+	text-transform:none;
+	padding-bottom:0;
+	padding-top:0;
+	mix-blend-mode:normal;
+	font-style:normal;
+	height:auto;
+	position:static;
+}
+#g-countries_graph2-Artboard_1 .g-pstyle0 {
+	text-align:right;
+}
+#g-countries_graph2-Artboard_1 .g-pstyle1 {
+	color:rgb(255,255,255);
+}
+#g-countries_graph2-Artboard_2 {
+	position:relative;
+	overflow:hidden;
+}
+#g-countries_graph2-Artboard_2 p {
+	font-weight:500;
+	font-size:12px;
+	line-height:14px;
+	filter:alpha(opacity=100);
+	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity:1;
+	letter-spacing:0em;
+	text-align:left;
+	color:rgb(0,0,0);
+	text-transform:none;
+	padding-bottom:0;
+	padding-top:0;
+	mix-blend-mode:normal;
+	font-style:normal;
+	height:auto;
+	position:static;
+}
+#g-countries_graph2-Artboard_2 .g-pstyle0 {
+	text-align:right;
+}
+#g-countries_graph2-Artboard_2 .g-pstyle1 {
+	color:rgb(255,255,255);
+}
+#g-countries_graph2-Artboard_2 .g-pstyle2 {
+	text-align:center;
+}
