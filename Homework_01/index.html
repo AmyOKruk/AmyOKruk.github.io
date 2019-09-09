@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <style>
+        body {
+            margin:auto;
+            padding:50px 10px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .serif {
+            font-family: 'Lora', serif;
+        }
+        .sans-serif {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* choose a light or dark theme to add to the body tag. */
+        .dark-theme {
+            background-color: #151515;
+            color: #fbfbfb;
+        }
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        .header {
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+
+        .story-body, .header, .chart-section, .footer {
+            margin:auto;
+            max-width: 700px;
+        }
+
+        .footer {
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+
+        .chart-section.wide{
+            width:100%;
+            max-width:1200px;
+        }
+
+        .chart-section.wide p.chart-title {
+            width:100%;
+            max-width:700px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .chart-section.wide p.chart-subhead {
+            width:100%;
+            max-width:700px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+
+        /* text styles */
+
+        p.kicker {
+            font-size:1rem;
+            text-transform:uppercase;
+        }
+
+        .text-center {
+            text-align:center;
+        }
+
+        h1.headline {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 0.25rem;
+            margin-top: 1rem;
+            font-weight: 800;
+        }
+
+        h2.subhead {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            margin-bottom:0;
+            margin-top: 15px;
+            font-weight: 400;
+        }
+
+        p.body-text {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-top:0;
+            margin-bottom:15px;
+        }
+
+        h3.section-head {
+            font-size:2rem;
+            margin:40px 0 10px 0;
+            font-weight:700;
+            line-height:1.3;
+        }
+
+        .byline {
+            font-size: 1.1rem;
+            line-height: 0.75;
+            margin-top: 1.5rem;
+            font-weight: 500;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            line-height: 1;
+            margin-top: 10px;
+            font-weight:400;
+            text-transform:uppercase;
+            letter-spacing:0.5px;
+        }
+
+
+        p.note {
+            font-size:0.85rem;
+        }
+
+        /* chart styles */
+
+        .chart-section {
+            width:100%;
+            max-width:1200px;
+            padding:20px 0px;
+        }
+
+        .story-body .chart-section {
+            padding-top:0px;
+        }
+
+
+        .chart-row {
+            display:flex;
+            justify-content: space-between;
+            margin-top:20px;
+        }
+
+        p.chart-title {
+            font-size:1.3rem;
+            font-weight:700;
+            max-width:700px;
+            margin:0px auto 5px auto;
+        }
+        p.chart-subhead {
+            margin:0 auto;
+            max-width:700px;
+            font-size:1rem;
+            margin-bottom:15px;
+        }
+
+        p.chart-label {
+            margin:0 0 5px 0;
+            font-size:0.85rem;
+            text-transform:uppercase;
+            font-weight:600;
+        }
+
+        .chart-row .chart {
+            width:100%;
+            padding-right:15px;
+            min-width:calc(25% - 15px);
+
+        }
+
+
+
+        p.chart-source {
+            font-size:0.75rem;
+            margin:auto;
+            max-width: 700px;
+            text-align: right;
+        }
+
+
+
+
+
+        /* photos */
+
+        .photo-section {
+            padding:30px 0px;
+            width:100%;
+            margin:auto;
+            display:flex;
+            max-width:1200px;
+        }
+
+        .photo {
+            width:100%;
+            padding-right:15px;
+        }
+        .photo img {
+            width:100%;	
+        }
+
+        p.caption {
+            font-size:0.9rem;
+            margin:0;
+        }
+
+
+
+        /* mobile */
+
+        @media (max-width:700px) {
+
+            .chart-row {
+                display:block;
+            }
+
+            .chart-row .chart {
+                padding:0;
+            }
+
+            .photo-section {
+                display:block;
+            }
+            .photo {
+                padding:0;
+            }
+
+        }
+
+        #g-templates-laptop, #g-templates-medium, #g-templates-mobile {
+            display: none;
+        }
+
+        @media (max-width: 490px) {
+            #g-templates-mobile {
+                display: block;
+            }
+        }
+
+        @media (min-width: 490px) and (max-width: 620px) {
+            #g-templates-laptop {
+                display: block;
+            }
+        }
+
+        @media (min-width: 620px)  {
+            #g-templates-medium {
+                display: block;
+            }
+        }
+
+        /* Amy's custom */
+
+        .north_america {
+            color: #8dd3c7;
+            font-weight: 700;
+        }
+
+        .south_america {
+            color: #bebada;
+            font-weight: 700;
+        }
+
+        .europe {
+            color: #fb8072;
+            font-weight: 700;
+        }
+
+        .asia {
+            color: #80b1d3;
+            font-weight: 700;
+        }
+
+        .africa {
+            color: #ffffb3;
+            font-weight: 700;
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: black;
+        }
+        
+        .oceania {
+            color: #fdb462;
+            font-weight: 700;
+        }
+
+        /* ai2html */
+
+        #g-templates-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-templates-box p {
+		margin:0;
+	}
+	.g-aiAbs {
+		position:absolute;
+	}
+	.g-aiImg {
+		display:block;
+		width:100% !important;
+	}
+	.g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	.g-aiPointText p { white-space: nowrap; }
+	#g-templates-medium {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-templates-medium p {
+		font-weight:500;
+		font-size:14px;
+		line-height:17px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(38,38,38);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-templates-medium .g-pstyle0 {
+		text-align:center;
+		color:rgb(0,0,0);
+	}
+	#g-templates-medium .g-pstyle1 {
+		height:17px;
+	}
+	#g-templates-medium .g-pstyle2 {
+		font-size:12px;
+		line-height:14px;
+		color:rgb(0,0,0);
+	}
+	#g-templates-laptop {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-templates-laptop p {
+		font-weight:500;
+		font-size:12px;
+		line-height:14px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(38,38,38);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-templates-laptop .g-pstyle0 {
+		text-align:center;
+		color:rgb(0,0,0);
+	}
+	#g-templates-laptop .g-pstyle1 {
+		height:14px;
+	}
+	#g-templates-laptop .g-pstyle2 {
+		line-height:10px;
+		height:10px;
+	}
+	#g-templates-laptop .g-pstyle3 {
+		color:rgb(0,0,0);
+	}
+	#g-templates-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-templates-mobile p {
+		font-weight:500;
+		font-size:10px;
+		line-height:11px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(38,38,38);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-templates-mobile .g-pstyle0 {
+		font-size:11px;
+		line-height:13px;
+		text-align:center;
+		color:rgb(0,0,0);
+	}
+	#g-templates-mobile .g-pstyle1 {
+		height:11px;
+	}
+	#g-templates-mobile .g-pstyle2 {
+		line-height:8px;
+		height:8px;
+	}
+	#g-templates-mobile .g-pstyle3 {
+		color:rgb(0,0,0);
+	}
+    </style>
+    
+    <!-- google fonts: Open Sans (sans-serif) and Lora (serif) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700&display=swap" rel="stylesheet">
+      
+    <title>This is your title</title>
+  </head>
+
+  <body class="light-theme"> <!-- all of the content on your html page goes inside the body -->
+
+    <div class="header">
+      <p class="kicker">Music</p>
+      <h1 class="headline">Which countries like the same kind of music?</h1>
+      <h2 class="subhead">I analyzed Spotify's top 200 song charts in 63 countries to find out</h2>
+      <p class="byline">By Amy O'Kruk</p>
+      <p class="date">Published September 9, 2019</p>
+    </div>
+
+    <div class="story-body">
+      <p class="body-text serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="body-text serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="chart-section">
+        <div class="chart-row">
+            <div class="chart">
+                <p class="chart-title">Music is most distinct and shared in Central and South America  </p>
+                <p class="chart-subhead">Spotify tracks top 200 song charts in over 60 countries. Music tastes vary wildly worldwide, but some countries in <span class='north_america'>North America</span>, <span class='south_america'>South America</span>, <span class='europe'>Europe</span>, <span class='asia'>Asia</span>, <span class='oceania'>Oceania</span> and <span class='africa'>Africa</span> listen to surprisingly similar (or different) jams</p>
+                <div id="g-templates-box" class="ai2html">
+
+                        <!-- Artboard: medium -->
+                        <div id="g-templates-medium" class="g-artboard" style="width:620px; height:722px;" data-aspect-ratio="0.859" data-min-width="620">
+                            <img id="g-templates-medium-img" class="g-aiImg g-aiAbs" alt="" src="templates-medium.png"/>
+                            <div id="g-ai0-1" class="g-Full_size g-aiAbs" style="top:5.6787%;left:50.0403%;margin-left:-36.9355%;width:73.871%;">
+                                <p class="g-pstyle0">The closer together the countries, the more top songs in common</p>
+                            </div>
+                            <div id="g-ai0-2" class="g-Full_size g-aiAbs g-aiPointText" style="top:14.3207%;margin-top:-9.4px;left:46.8286%;width:86px;">
+                                <p class="g-pstyle1">Indonesia</p>
+                            </div>
+                            <div id="g-ai0-3" class="g-Full_size g-aiAbs g-aiPointText" style="top:15.9828%;margin-top:-9.4px;left:53.4463%;width:82px;">
+                                <p class="g-pstyle1">Germany</p>
+                            </div>
+                            <div id="g-ai0-4" class="g-Full_size g-aiAbs g-aiPointText" style="top:19.8609%;margin-top:-9.4px;left:29.0671%;width:93px;">
+                                <p class="g-pstyle1">Philippines</p>
+                            </div>
+                            <div id="g-ai0-5" class="g-Full_size g-aiAbs g-aiPointText" style="top:20.1379%;margin-top:-9.4px;left:42.9539%;width:68px;">
+                                <p class="g-pstyle1">Austria</p>
+                            </div>
+                            <div id="g-ai0-6" class="g-Full_size g-aiAbs g-aiPointText" style="top:20.8304%;margin-top:-9.4px;left:65.604%;width:72px;">
+                                <p class="g-pstyle1">Norway</p>
+                            </div>
+                            <div id="g-ai0-7" class="g-Full_size g-aiAbs g-aiPointText" style="top:23.2168%;margin-top:-9.6px;left:55.5548%;width:94px;">
+                                <p class="g-pstyle1">Hong Kong</p>
+                            </div>
+                            <div id="g-ai0-8" class="g-Full_size g-aiAbs g-aiPointText" style="top:24.57%;margin-top:-9.4px;left:37.7312%;width:69px;">
+                                <p class="g-pstyle1">Iceland</p>
+                            </div>
+                            <div id="g-ai0-9" class="g-Full_size g-aiAbs g-aiPointText" style="top:26.0936%;margin-top:-9.4px;left:75.262%;width:128px;">
+                                <p class="g-pstyle1">United Kingdom</p>
+                            </div>
+                            <div id="g-ai0-10" class="g-Full_size g-aiAbs g-aiPointText" style="top:26.6476%;margin-top:-9.4px;left:26.8677%;width:83px;">
+                                <p class="g-pstyle1">Denmark</p>
+                            </div>
+                            <div id="g-ai0-11" class="g-Full_size g-aiAbs g-aiPointText" style="top:29.6947%;margin-top:-9.4px;left:71.5905%;width:68px;">
+                                <p class="g-pstyle1">Ireland</p>
+                            </div>
+                            <div id="g-ai0-12" class="g-Full_size g-aiAbs g-aiPointText" style="top:30.9412%;margin-top:-9.4px;left:49.8271%;width:120px;">
+                                <p class="g-pstyle1">Czech Republic</p>
+                            </div>
+                            <div id="g-ai0-13" class="g-Full_size g-aiAbs g-aiPointText" style="top:32.0492%;margin-top:-9.4px;left:10.7899%;width:66px;">
+                                <p class="g-pstyle1">France</p>
+                            </div>
+                            <div id="g-ai0-14" class="g-Full_size g-aiAbs g-aiPointText" style="top:33.1573%;margin-top:-9.4px;left:63.0091%;width:70px;">
+                                <p class="g-pstyle1">Estonia</p>
+                            </div>
+                            <div id="g-ai0-15" class="g-Full_size g-aiAbs g-aiPointText" style="top:33.4343%;margin-top:-9.4px;left:26.9704%;width:103px;">
+                                <p class="g-pstyle1">Netherlands</p>
+                            </div>
+                            <div id="g-ai0-16" class="g-Full_size g-aiAbs g-aiPointText" style="top:33.8498%;margin-top:-9.4px;left:79.332%;width:107px;">
+                                <p class="g-pstyle1">New Zealand</p>
+                            </div>
+                            <div id="g-ai0-17" class="g-Full_size g-aiAbs g-aiPointText" style="top:36.7584%;margin-top:-9.4px;left:40.7393%;width:75px;">
+                                <p class="g-pstyle1">Belgium</p>
+                            </div>
+                            <div id="g-ai0-18" class="g-Full_size g-aiAbs g-aiPointText" style="top:37.0354%;margin-top:-9.4px;left:74.7607%;width:79px;">
+                                <p class="g-pstyle1">Australia</p>
+                            </div>
+                            <div id="g-ai0-19" class="g-Full_size g-aiAbs g-aiPointText" style="top:37.3124%;margin-top:-9.4px;left:53.9438%;width:78px;">
+                                <p class="g-pstyle1">Hungary</p>
+                            </div>
+                            <div id="g-ai0-20" class="g-Full_size g-aiAbs g-aiPointText" style="top:38.8359%;margin-top:-9.4px;left:20.5436%;width:67px;">
+                                <p class="g-pstyle1">Poland</p>
+                            </div>
+                            <div id="g-ai0-21" class="g-Full_size g-aiAbs g-aiPointText" style="top:39.113%;margin-top:-9.4px;left:71.7764%;width:101px;">
+                                <p class="g-pstyle1">South Africa</p>
+                            </div>
+                            <div id="g-ai0-22" class="g-Full_size g-aiAbs g-aiPointText" style="top:39.39%;margin-top:-9.4px;left:61.8882%;width:59px;">
+                                <p class="g-pstyle1">Malta</p>
+                            </div>
+                            <div id="g-ai0-23" class="g-Full_size g-aiAbs g-aiPointText" style="top:40.0825%;margin-top:-9.4px;left:84.8878%;width:109px;">
+                                <p class="g-pstyle1">United States</p>
+                            </div>
+                            <div id="g-ai0-24" class="g-Full_size g-aiAbs g-aiPointText" style="top:41.329%;margin-top:-9.4px;left:10.7253%;width:78px;">
+                                <p class="g-pstyle1">Thailand</p>
+                            </div>
+                            <div id="g-ai0-25" class="g-Full_size g-aiAbs g-aiPointText" style="top:41.7445%;margin-top:-9.4px;left:65.7847%;width:83px;">
+                                <p class="g-pstyle1">Lithuania</p>
+                            </div>
+                            <div id="g-ai0-26" class="g-Full_size g-aiAbs g-aiPointText" style="top:42.16%;margin-top:-9.4px;left:77.5829%;width:71px;">
+                                <p class="g-pstyle1">Canada</p>
+                            </div>
+                            <div id="g-ai0-27" class="g-Full_size g-aiAbs g-aiPointText" style="top:42.7141%;margin-top:-9.4px;left:54.3544%;width:75px;">
+                                <p class="g-pstyle1">Slovakia</p>
+                            </div>
+                            <div id="g-ai0-28" class="g-Full_size g-aiAbs g-aiPointText" style="top:42.8526%;margin-top:-9.4px;left:35.8645%;width:98px;">
+                                <p class="g-pstyle1">Switzerland</p>
+                            </div>
+                            <div id="g-ai0-29" class="g-Full_size g-aiAbs g-aiPointText" style="top:45.0686%;margin-top:-9.4px;left:45.68%;width:105px;">
+                                <p class="g-pstyle1">Luxembourg</p>
+                            </div>
+                            <div id="g-ai0-30" class="g-Full_size g-aiAbs g-aiPointText" style="top:46.0382%;margin-top:-9.4px;left:89.012%;width:79px;">
+                                <p class="g-pstyle1">Malaysia</p>
+                            </div>
+                            <div id="g-ai0-31" class="g-Full_size g-aiAbs g-aiPointText" style="top:46.3152%;margin-top:-9.4px;left:25.7998%;width:82px;">
+                                <p class="g-pstyle1">Viet Nam</p>
+                            </div>
+                            <div id="g-ai0-32" class="g-Full_size g-aiAbs g-aiPointText" style="top:47.7002%;margin-top:-9.4px;left:15.4662%;width:70px;">
+                                <p class="g-pstyle1">Finland</p>
+                            </div>
+                            <div id="g-ai0-33" class="g-Full_size g-aiAbs g-aiPointText" style="top:50.1933%;margin-top:-9.4px;left:65.3942%;width:80px;">
+                                <p class="g-pstyle1">Romania</p>
+                            </div>
+                            <div id="g-ai0-34" class="g-Full_size g-aiAbs g-aiPointText" style="top:50.7473%;margin-top:-9.4px;left:86.5419%;width:88px;">
+                                <p class="g-pstyle1">Singapore</p>
+                            </div>
+                            <div id="g-ai0-35" class="g-Full_size g-aiAbs g-aiPointText" style="top:51.0243%;margin-top:-9.4px;left:78.8201%;width:60px;">
+                                <p class="g-pstyle1">Latvia</p>
+                            </div>
+                            <div id="g-ai0-36" class="g-Full_size g-aiAbs g-aiPointText" style="top:52.6864%;margin-top:-9.4px;left:60.0841%;width:67px;">
+                                <p class="g-pstyle1">Cyprus</p>
+                            </div>
+                            <div id="g-ai0-37" class="g-Full_size g-aiAbs g-aiPointText" style="top:53.7944%;margin-top:-9.4px;left:43.7876%;width:77px;">
+                                <p class="g-pstyle1">Portugal</p>
+                            </div>
+                            <div id="g-ai0-38" class="g-Full_size g-aiAbs g-aiPointText" style="top:55.4564%;margin-top:-9.4px;left:71.2275%;width:76px;">
+                                <p class="g-pstyle1">Bulgaria</p>
+                            </div>
+                            <div id="g-ai0-39" class="g-Full_size g-aiAbs g-aiPointText" style="top:55.7334%;margin-top:-9.4px;left:7.5387%;width:49px;">
+                                <p class="g-pstyle1">Italy</p>
+                            </div>
+                            <div id="g-ai0-40" class="g-Full_size g-aiAbs g-aiPointText" style="top:55.872%;margin-top:-9.4px;left:90.6631%;width:68px;">
+                                <p class="g-pstyle1">Taiwan</p>
+                            </div>
+                            <div id="g-ai0-41" class="g-Full_size g-aiAbs g-aiPointText" style="top:62.6587%;margin-top:-9.4px;left:65.3137%;width:68px;">
+                                <p class="g-pstyle1">Greece</p>
+                            </div>
+                            <div id="g-ai0-42" class="g-Full_size g-aiAbs g-aiPointText" style="top:64.0437%;margin-top:-9.4px;left:72.8674%;width:57px;">
+                                <p class="g-pstyle1">Israel</p>
+                            </div>
+                            <div id="g-ai0-43" class="g-Full_size g-aiAbs g-aiPointText" style="top:65.5672%;margin-top:-9.4px;left:91.0572%;width:73px;">
+                                <p class="g-pstyle1">Sweden</p>
+                            </div>
+                            <div id="g-ai0-44" class="g-Full_size g-aiAbs g-aiPointText" style="top:70.2764%;margin-top:-9.4px;left:79.6807%;width:54px;">
+                                <p class="g-pstyle1">India</p>
+                            </div>
+                            <div id="g-ai0-45" class="g-Full_size g-aiAbs g-aiPointText" style="top:70.6919%;margin-top:-9.4px;left:20.4039%;width:68px;">
+                                <p class="g-pstyle1">Mexico</p>
+                            </div>
+                            <div id="g-ai0-46" class="g-Full_size g-aiAbs" style="top:73.4072%;left:55.8485%;width:19.5161%;">
+                                <p class="g-pstyle2">A few countries liked completely unique music that you won&rsquo;t hear elsewhere</p>
+                            </div>
+                            <div id="g-ai0-47" class="g-Full_size g-aiAbs g-aiPointText" style="top:74.7085%;margin-top:-9.4px;left:17.6766%;width:152px;">
+                                <p class="g-pstyle1">Dominican Republic</p>
+                            </div>
+                            <div id="g-ai0-48" class="g-Full_size g-aiAbs g-aiPointText" style="top:76.3706%;margin-top:-9.4px;left:31.4498%;width:88px;">
+                                <p class="g-pstyle1">Nicaragua</p>
+                            </div>
+                            <div id="g-ai0-49" class="g-Full_size g-aiAbs g-aiPointText" style="top:77.7556%;margin-top:-9.4px;left:17.1398%;width:87px;">
+                                <p class="g-pstyle1">Honduras</p>
+                            </div>
+                            <div id="g-ai0-50" class="g-Full_size g-aiAbs g-aiPointText" style="top:78.3096%;margin-top:-9.4px;left:38.8748%;width:89px;">
+                                <p class="g-pstyle1">Costa Rica</p>
+                            </div>
+                            <div id="g-ai0-51" class="g-Full_size g-aiAbs g-aiPointText" style="top:78.8636%;margin-top:-9.4px;left:89.5231%;width:58px;">
+                                <p class="g-pstyle1">Brazil</p>
+                            </div>
+                            <div id="g-ai0-52" class="g-Full_size g-aiAbs g-aiPointText" style="top:79.9717%;margin-top:-9.4px;left:21.0515%;width:90px;">
+                                <p class="g-pstyle1">El Savador</p>
+                            </div>
+                            <div id="g-ai0-53" class="g-Full_size g-aiAbs g-aiPointText" style="top:81.0797%;margin-top:-9.4px;left:31.8325%;width:93px;">
+                                <p class="g-pstyle1">Guatamala</p>
+                            </div>
+                            <div id="g-ai0-54" class="g-Full_size g-aiAbs g-aiPointText" style="top:81.3567%;margin-top:-9.4px;left:82.5315%;width:60px;">
+                                <p class="g-pstyle1">Japan</p>
+                            </div>
+                            <div id="g-ai0-55" class="g-Full_size g-aiAbs g-aiPointText" style="top:82.1877%;margin-top:-9.4px;left:43.1964%;width:75px;">
+                                <p class="g-pstyle1">Panama</p>
+                            </div>
+                            <div id="g-ai0-56" class="g-Full_size g-aiAbs g-aiPointText" style="top:83.2958%;margin-top:-9.4px;left:35.0034%;width:65px;">
+                                <p class="g-pstyle1">Bolivia</p>
+                            </div>
+                            <div id="g-ai0-57" class="g-Full_size g-aiAbs g-aiPointText" style="top:83.9883%;margin-top:-9.4px;left:22.2504%;width:84px;">
+                                <p class="g-pstyle1">Colombia</p>
+                            </div>
+                            <div id="g-ai0-58" class="g-Full_size g-aiAbs g-aiPointText" style="top:85.7889%;margin-top:-9.4px;left:31.4945%;width:76px;">
+                                <p class="g-pstyle1">Ecuador</p>
+                            </div>
+                            <div id="g-ai0-59" class="g-Full_size g-aiAbs g-aiPointText" style="top:86.7584%;margin-top:-9.4px;left:52.2321%;width:86px;">
+                                <p class="g-pstyle1">Argentina</p>
+                            </div>
+                            <div id="g-ai0-60" class="g-Full_size g-aiAbs g-aiPointText" style="top:87.4509%;margin-top:-9.4px;left:28.0499%;width:53px;">
+                                <p class="g-pstyle1">Peru</p>
+                            </div>
+                            <div id="g-ai0-61" class="g-Full_size g-aiAbs g-aiPointText" style="top:88.2819%;margin-top:-9.4px;left:39.9453%;width:83px;">
+                                <p class="g-pstyle1">Paraguay</p>
+                            </div>
+                            <div id="g-ai0-62" class="g-Full_size g-aiAbs g-aiPointText" style="top:88.9744%;margin-top:-9.4px;left:77.9352%;width:66px;">
+                                <p class="g-pstyle1">Turkey</p>
+                            </div>
+                            <div id="g-ai0-63" class="g-Full_size g-aiAbs g-aiPointText" style="top:89.2515%;margin-top:-9.4px;left:59.142%;width:58px;">
+                                <p class="g-pstyle1">Spain</p>
+                            </div>
+                            <div id="g-ai0-64" class="g-Full_size g-aiAbs g-aiPointText" style="top:91.7445%;margin-top:-9.4px;left:48.1029%;width:78px;">
+                                <p class="g-pstyle1">Uruguay</p>
+                            </div>
+                            <div id="g-ai0-65" class="g-Full_size g-aiAbs g-aiPointText" style="top:93.2681%;margin-top:-9.4px;left:41.6616%;width:54px;">
+                                <p class="g-pstyle1">Chile</p>
+                            </div>
+                        </div>
+                    
+                        <!-- Artboard: laptop -->
+                        <div id="g-templates-laptop" class="g-artboard" style="width:490px; height:802.999999999999px;" data-aspect-ratio="0.61" data-min-width="490" data-max-width="619">
+                            <img id="g-templates-laptop-img" class="g-aiImg g-aiAbs" alt="" src="templates-laptop.png"/>
+                            <div id="g-ai1-1" class="g-Laptop g-aiAbs" style="top:4.8568%;left:50.0039%;margin-left:-38.4694%;width:76.9388%;">
+                                <p class="g-pstyle0">The closer together the countries, the more top songs in common</p>
+                            </div>
+                            <div id="g-ai1-2" class="g-Laptop g-aiAbs g-aiPointText" style="top:12.798%;margin-top:-7.8px;left:45.0921%;width:50px;">
+                                <p class="g-pstyle1">Chile</p>
+                            </div>
+                            <div id="g-ai1-3" class="g-Laptop g-aiAbs g-aiPointText" style="top:13.1716%;margin-top:-7.8px;left:55.6288%;width:48px;">
+                                <p class="g-pstyle1">Peru</p>
+                            </div>
+                            <div id="g-ai1-4" class="g-Laptop g-aiAbs g-aiPointText" style="top:15.4131%;margin-top:-7.8px;left:47.5745%;width:75px;">
+                                <p class="g-pstyle1">Colombia</p>
+                            </div>
+                            <div id="g-ai1-5" class="g-Laptop g-aiAbs g-aiPointText" style="top:16.0358%;margin-top:-7.8px;left:58.5244%;width:68px;">
+                                <p class="g-pstyle1">Ecuador</p>
+                            </div>
+                            <div id="g-ai1-6" class="g-Laptop g-aiAbs g-aiPointText" style="top:17.2811%;margin-top:-7.8px;left:64.2825%;width:74px;">
+                                <p class="g-pstyle1">Paraguay</p>
+                            </div>
+                            <div id="g-ai1-7" class="g-Laptop g-aiAbs g-aiPointText" style="top:18.8753%;margin-top:-10.6px;left:39.8168%;width:85px;">
+                                <p class="g-pstyle2">Dominican </p>
+                                <p class="g-pstyle2">Republic</p>
+                            </div>
+                            <div id="g-ai1-8" class="g-Laptop g-aiAbs g-aiPointText" style="top:19.1491%;margin-top:-7.8px;left:69.0079%;width:70px;">
+                                <p class="g-pstyle1">Uruguay</p>
+                            </div>
+                            <div id="g-ai1-9" class="g-Laptop g-aiAbs g-aiPointText" style="top:19.1491%;margin-top:-7.8px;left:54.8188%;width:83px;">
+                                <p class="g-pstyle1">Guatamala</p>
+                            </div>
+                            <div id="g-ai1-10" class="g-Laptop g-aiAbs g-aiPointText" style="top:20.7681%;margin-top:-7.8px;left:44.5297%;width:68px;">
+                                <p class="g-pstyle1">Panama</p>
+                            </div>
+                            <div id="g-ai1-11" class="g-Laptop g-aiAbs g-aiPointText" style="top:20.8926%;margin-top:-7.8px;left:60.0331%;width:59px;">
+                                <p class="g-pstyle1">Bolivia</p>
+                            </div>
+                            <div id="g-ai1-12" class="g-Laptop g-aiAbs g-aiPointText" style="top:22.387%;margin-top:-7.8px;left:49.6893%;width:79px;">
+                                <p class="g-pstyle1">Nicaragua</p>
+                            </div>
+                            <div id="g-ai1-13" class="g-Laptop g-aiAbs g-aiPointText" style="top:23.6323%;margin-top:-7.8px;left:72.2154%;width:76px;">
+                                <p class="g-pstyle1">Argentina</p>
+                            </div>
+                            <div id="g-ai1-14" class="g-Laptop g-aiAbs g-aiPointText" style="top:23.7569%;margin-top:-7.8px;left:52.0171%;width:77px;">
+                                <p class="g-pstyle1">Honduras</p>
+                            </div>
+                            <div id="g-ai1-15" class="g-Laptop g-aiAbs g-aiPointText" style="top:25.0022%;margin-top:-7.8px;left:55.1076%;width:80px;">
+                                <p class="g-pstyle1">El Savador</p>
+                            </div>
+                            <div id="g-ai1-16" class="g-Laptop g-aiAbs g-aiPointText" style="top:26.3721%;margin-top:-7.8px;left:24.5201%;width:45px;">
+                                <p class="g-pstyle1">Italy</p>
+                            </div>
+                            <div id="g-ai1-17" class="g-Laptop g-aiAbs g-aiPointText" style="top:26.4966%;margin-top:-7.8px;left:58.4835%;width:79px;">
+                                <p class="g-pstyle1">Costa Rica</p>
+                            </div>
+                            <div id="g-ai1-18" class="g-Laptop g-aiAbs g-aiPointText" style="top:27.1193%;margin-top:-7.8px;left:15.0614%;width:60px;">
+                                <p class="g-pstyle1">Turkey</p>
+                            </div>
+                            <div id="g-ai1-19" class="g-Laptop g-aiAbs g-aiPointText" style="top:27.7419%;margin-top:-7.8px;left:67.6473%;width:62px;">
+                                <p class="g-pstyle1">Mexico</p>
+                            </div>
+                            <div id="g-ai1-20" class="g-Laptop g-aiAbs g-aiPointText" style="top:29.3608%;margin-top:-7.8px;left:76.8431%;width:53px;">
+                                <p class="g-pstyle1">Spain</p>
+                            </div>
+                            <div id="g-ai1-21" class="g-Laptop g-aiAbs" style="top:31.1333%;left:30.1553%;width:24.6939%;">
+                                <p class="g-pstyle3">A few countries liked completely unique music that you won&rsquo;t hear elsewhere</p>
+                            </div>
+                            <div id="g-ai1-22" class="g-Laptop g-aiAbs g-aiPointText" style="top:36.9574%;margin-top:-7.8px;left:15.4666%;width:60px;">
+                                <p class="g-pstyle1">France</p>
+                            </div>
+                            <div id="g-ai1-23" class="g-Laptop g-aiAbs g-aiPointText" style="top:42.8104%;margin-top:-7.8px;left:25.4899%;width:61px;">
+                                <p class="g-pstyle1">Poland</p>
+                            </div>
+                            <div id="g-ai1-24" class="g-Laptop g-aiAbs g-aiPointText" style="top:43.184%;margin-top:-7.8px;left:90.8185%;width:53px;">
+                                <p class="g-pstyle1">Brazil</p>
+                            </div>
+                            <div id="g-ai1-25" class="g-Laptop g-aiAbs g-aiPointText" style="top:46.4219%;margin-top:-7.8px;left:10.9467%;width:54px;">
+                                <p class="g-pstyle1">Japan</p>
+                            </div>
+                            <div id="g-ai1-26" class="g-Laptop g-aiAbs g-aiPointText" style="top:49.0371%;margin-top:-7.8px;left:81.2313%;width:63px;">
+                                <p class="g-pstyle1">Finland</p>
+                            </div>
+                            <div id="g-ai1-27" class="g-Laptop g-aiAbs g-aiPointText" style="top:49.4107%;margin-top:-7.8px;left:27.2957%;width:91px;">
+                                <p class="g-pstyle1">Netherlands</p>
+                            </div>
+                            <div id="g-ai1-28" class="g-Laptop g-aiAbs g-aiPointText" style="top:50.1579%;margin-top:-7.8px;left:39.8147%;width:52px;">
+                                <p class="g-pstyle1">Israel</p>
+                            </div>
+                            <div id="g-ai1-29" class="g-Laptop g-aiAbs g-aiPointText" style="top:52.524%;margin-top:-7.8px;left:63.2195%;width:69px;">
+                                <p class="g-pstyle1">Portugal</p>
+                            </div>
+                            <div id="g-ai1-30" class="g-Laptop g-aiAbs g-aiPointText" style="top:54.7656%;margin-top:-7.8px;left:86.1029%;width:66px;">
+                                <p class="g-pstyle1">Sweden</p>
+                            </div>
+                            <div id="g-ai1-31" class="g-Laptop g-aiAbs g-aiPointText" style="top:55.0146%;margin-top:-7.8px;left:77.1889%;width:50px;">
+                                <p class="g-pstyle1">India</p>
+                            </div>
+                            <div id="g-ai1-32" class="g-Laptop g-aiAbs g-aiPointText" style="top:56.509%;margin-top:-7.8px;left:19.7511%;width:73px;">
+                                <p class="g-pstyle1">Viet Nam</p>
+                            </div>
+                            <div id="g-ai1-33" class="g-Laptop g-aiAbs g-aiPointText" style="top:59.2488%;margin-top:-7.8px;left:37.274%;width:68px;">
+                                <p class="g-pstyle1">Belgium</p>
+                            </div>
+                            <div id="g-ai1-34" class="g-Laptop g-aiAbs g-aiPointText" style="top:60.3696%;margin-top:-7.8px;left:43.7849%;width:93px;">
+                                <p class="g-pstyle1">Luxembourg</p>
+                            </div>
+                            <div id="g-ai1-35" class="g-Laptop g-aiAbs g-aiPointText" style="top:60.9922%;margin-top:-7.8px;left:15.2702%;width:77px;">
+                                <p class="g-pstyle1">Indonesia</p>
+                            </div>
+                            <div id="g-ai1-36" class="g-Laptop g-aiAbs g-aiPointText" style="top:61.6149%;margin-top:-7.8px;left:50.9074%;width:70px;">
+                                <p class="g-pstyle1">Hungary</p>
+                            </div>
+                            <div id="g-ai1-37" class="g-Laptop g-aiAbs g-aiPointText" style="top:62.6112%;margin-top:-7.8px;left:64.2791%;width:68px;">
+                                <p class="g-pstyle1">Bulgaria</p>
+                            </div>
+                            <div id="g-ai1-38" class="g-Laptop g-aiAbs g-aiPointText" style="top:63.1093%;margin-top:-7.8px;left:27.1714%;width:78px;">
+                                <p class="g-pstyle1">Singapore</p>
+                            </div>
+                            <div id="g-ai1-39" class="g-Laptop g-aiAbs g-aiPointText" style="top:64.4792%;margin-top:-7.8px;left:83.5188%;width:83px;">
+                                <p class="g-pstyle1">Philippines</p>
+                            </div>
+                            <div id="g-ai1-40" class="g-Laptop g-aiAbs g-aiPointText" style="top:64.7282%;margin-top:-7.8px;left:54.4681%;width:72px;">
+                                <p class="g-pstyle1">Romania</p>
+                            </div>
+                            <div id="g-ai1-41" class="g-Laptop g-aiAbs g-aiPointText" style="top:65.5999%;margin-top:-7.8px;left:24.4846%;width:71px;">
+                                <p class="g-pstyle1">Malaysia</p>
+                            </div>
+                            <div id="g-ai1-42" class="g-Laptop g-aiAbs g-aiPointText" style="top:68.0906%;margin-top:-7.8px;left:87.6016%;width:70px;">
+                                <p class="g-pstyle1">Thailand</p>
+                            </div>
+                            <div id="g-ai1-43" class="g-Laptop g-aiAbs g-aiPointText" style="top:68.2151%;margin-top:-7.8px;left:59.5735%;width:61px;">
+                                <p class="g-pstyle1">Cyprus</p>
+                            </div>
+                            <div id="g-ai1-44" class="g-Laptop g-aiAbs g-aiPointText" style="top:69.4605%;margin-top:-7.8px;left:43.2484%;width:68px;">
+                                <p class="g-pstyle1">Slovakia</p>
+                            </div>
+                            <div id="g-ai1-45" class="g-Laptop g-aiAbs g-aiPointText" style="top:70.3322%;margin-top:-7.8px;left:24.6875%;width:84px;">
+                                <p class="g-pstyle1">Hong Kong</p>
+                            </div>
+                            <div id="g-ai1-46" class="g-Laptop g-aiAbs g-aiPointText" style="top:71.3285%;margin-top:-7.8px;left:76.48%;width:62px;">
+                                <p class="g-pstyle1">Iceland</p>
+                            </div>
+                            <div id="g-ai1-47" class="g-Laptop g-aiAbs g-aiPointText" style="top:72.3247%;margin-top:-7.8px;left:49.2174%;width:53px;">
+                                <p class="g-pstyle1">Malta</p>
+                            </div>
+                            <div id="g-ai1-48" class="g-Laptop g-aiAbs g-aiPointText" style="top:73.4455%;margin-top:-7.8px;left:63.4132%;width:63px;">
+                                <p class="g-pstyle1">Estonia</p>
+                            </div>
+                            <div id="g-ai1-49" class="g-Laptop g-aiAbs g-aiPointText" style="top:74.5663%;margin-top:-7.8px;left:37.7162%;width:106px;">
+                                <p class="g-pstyle1">Czech Republic</p>
+                            </div>
+                            <div id="g-ai1-50" class="g-Laptop g-aiAbs g-aiPointText" style="top:75.4381%;margin-top:-7.8px;left:57.2042%;width:74px;">
+                                <p class="g-pstyle1">Lithuania</p>
+                            </div>
+                            <div id="g-ai1-51" class="g-Laptop g-aiAbs g-aiPointText" style="top:77.057%;margin-top:-7.8px;left:33.2344%;width:87px;">
+                                <p class="g-pstyle1">Switzerland</p>
+                            </div>
+                            <div id="g-ai1-52" class="g-Laptop g-aiAbs g-aiPointText" style="top:78.5514%;margin-top:-7.8px;left:77.8767%;width:62px;">
+                                <p class="g-pstyle1">Taiwan</p>
+                            </div>
+                            <div id="g-ai1-53" class="g-Laptop g-aiAbs g-aiPointText" style="top:79.174%;margin-top:-7.8px;left:21.7576%;width:74px;">
+                                <p class="g-pstyle1">Denmark</p>
+                            </div>
+                            <div id="g-ai1-54" class="g-Laptop g-aiAbs g-aiPointText" style="top:79.6722%;margin-top:-7.8px;left:67.8601%;width:55px;">
+                                <p class="g-pstyle1">Latvia</p>
+                            </div>
+                            <div id="g-ai1-55" class="g-Laptop g-aiAbs g-aiPointText" style="top:79.6722%;margin-top:-7.8px;left:47.2487%;width:90px;">
+                                <p class="g-pstyle1">South Africa</p>
+                            </div>
+                            <div id="g-ai1-56" class="g-Laptop g-aiAbs g-aiPointText" style="top:82.2874%;margin-top:-7.8px;left:51.7363%;width:71px;">
+                                <p class="g-pstyle1">Australia</p>
+                            </div>
+                            <div id="g-ai1-57" class="g-Laptop g-aiAbs g-aiPointText" style="top:83.6572%;margin-top:-7.8px;left:59.6787%;width:64px;">
+                                <p class="g-pstyle1">Canada</p>
+                            </div>
+                            <div id="g-ai1-58" class="g-Laptop g-aiAbs g-aiPointText" style="top:83.9063%;margin-top:-7.8px;left:71.3411%;width:62px;">
+                                <p class="g-pstyle1">Greece</p>
+                            </div>
+                            <div id="g-ai1-59" class="g-Laptop g-aiAbs g-aiPointText" style="top:86.646%;margin-top:-7.8px;left:27.373%;width:74px;">
+                                <p class="g-pstyle1">Germany</p>
+                            </div>
+                            <div id="g-ai1-60" class="g-Laptop g-aiAbs g-aiPointText" style="top:86.646%;margin-top:-7.8px;left:50.9572%;width:95px;">
+                                <p class="g-pstyle1">New Zealand</p>
+                            </div>
+                            <div id="g-ai1-61" class="g-Laptop g-aiAbs g-aiPointText" style="top:88.0159%;margin-top:-7.8px;left:63.7265%;width:97px;">
+                                <p class="g-pstyle1">United States</p>
+                            </div>
+                            <div id="g-ai1-62" class="g-Laptop g-aiAbs g-aiPointText" style="top:88.265%;margin-top:-7.8px;left:32.2407%;width:62px;">
+                                <p class="g-pstyle1">Austria</p>
+                            </div>
+                            <div id="g-ai1-63" class="g-Laptop g-aiAbs g-aiPointText" style="top:89.8839%;margin-top:-7.8px;left:56.7178%;width:61px;">
+                                <p class="g-pstyle1">Ireland</p>
+                            </div>
+                            <div id="g-ai1-64" class="g-Laptop g-aiAbs g-aiPointText" style="top:90.7309%;margin-top:-10.6px;left:44.7178%;width:72px;">
+                                <p class="g-pstyle2">United </p>
+                                <p class="g-pstyle2">Kingdom</p>
+                            </div>
+                            <div id="g-ai1-65" class="g-Laptop g-aiAbs g-aiPointText" style="top:94.2425%;margin-top:-7.8px;left:48.8249%;width:65px;">
+                                <p class="g-pstyle1">Norway</p>
+                            </div>
+                        </div>
+                    
+                        <!-- Artboard: mobile -->
+                        <div id="g-templates-mobile" class="g-artboard" style="width:375px; height:645.799999999999px;" data-aspect-ratio="0.581" data-min-width="375" data-max-width="489">
+                            <img id="g-templates-mobile-img" class="g-aiImg g-aiAbs" alt="" src="templates-mobile.png"/>
+                            <div id="g-ai2-1" class="g-Mobile g-aiAbs" style="top:3.8712%;left:50.1333%;margin-left:-49.6%;width:99.2%;">
+                                <p class="g-pstyle0">The closer together the countries, the more top songs in common</p>
+                            </div>
+                            <div id="g-ai2-2" class="g-Mobile g-aiAbs g-aiPointText" style="top:11.9012%;margin-top:-5.9px;left:43.4974%;width:44px;">
+                                <p class="g-pstyle1">Chile</p>
+                            </div>
+                            <div id="g-ai2-3" class="g-Mobile g-aiAbs g-aiPointText" style="top:12.2109%;margin-top:-5.9px;left:54.3977%;width:43px;">
+                                <p class="g-pstyle1">Peru</p>
+                            </div>
+                            <div id="g-ai2-4" class="g-Mobile g-aiAbs g-aiPointText" style="top:14.5336%;margin-top:-5.9px;left:46.0656%;width:64px;">
+                                <p class="g-pstyle1">Colombia</p>
+                            </div>
+                            <div id="g-ai2-5" class="g-Mobile g-aiAbs g-aiPointText" style="top:14.9981%;margin-top:-5.9px;left:57.3932%;width:58px;">
+                                <p class="g-pstyle1">Ecuador</p>
+                            </div>
+                            <div id="g-ai2-6" class="g-Mobile g-aiAbs g-aiPointText" style="top:16.3917%;margin-top:-5.9px;left:63.35%;width:63px;">
+                                <p class="g-pstyle1">Paraguay</p>
+                            </div>
+                            <div id="g-ai2-7" class="g-Mobile g-aiAbs g-aiPointText" style="top:17.9869%;margin-top:-8.2px;left:38.0404%;width:72px;">
+                                <p class="g-pstyle2">Dominican </p>
+                                <p class="g-pstyle2">Republic</p>
+                            </div>
+                            <div id="g-ai2-8" class="g-Mobile g-aiAbs g-aiPointText" style="top:18.2499%;margin-top:-5.9px;left:68.2383%;width:60px;">
+                                <p class="g-pstyle1">Uruguay</p>
+                            </div>
+                            <div id="g-ai2-9" class="g-Mobile g-aiAbs g-aiPointText" style="top:18.2499%;margin-top:-5.9px;left:53.5599%;width:70px;">
+                                <p class="g-pstyle1">Guatamala</p>
+                            </div>
+                            <div id="g-ai2-10" class="g-Mobile g-aiAbs g-aiPointText" style="top:19.7984%;margin-top:-5.9px;left:42.9156%;width:58px;">
+                                <p class="g-pstyle1">Panama</p>
+                            </div>
+                            <div id="g-ai2-11" class="g-Mobile g-aiAbs g-aiPointText" style="top:19.9532%;margin-top:-5.9px;left:58.9539%;width:51px;">
+                                <p class="g-pstyle1">Bolivia</p>
+                            </div>
+                            <div id="g-ai2-12" class="g-Mobile g-aiAbs g-aiPointText" style="top:21.3468%;margin-top:-5.9px;left:48.2534%;width:67px;">
+                                <p class="g-pstyle1">Nicaragua</p>
+                            </div>
+                            <div id="g-ai2-13" class="g-Mobile g-aiAbs g-aiPointText" style="top:22.5856%;margin-top:-5.9px;left:71.5568%;width:65px;">
+                                <p class="g-pstyle1">Argentina</p>
+                            </div>
+                            <div id="g-ai2-14" class="g-Mobile g-aiAbs g-aiPointText" style="top:22.7405%;margin-top:-5.9px;left:50.6615%;width:66px;">
+                                <p class="g-pstyle1">Honduras</p>
+                            </div>
+                            <div id="g-ai2-15" class="g-Mobile g-aiAbs g-aiPointText" style="top:23.8244%;margin-top:-5.9px;left:53.8586%;width:68px;">
+                                <p class="g-pstyle1">El Savador</p>
+                            </div>
+                            <div id="g-ai2-16" class="g-Mobile g-aiAbs g-aiPointText" style="top:25.3729%;margin-top:-5.9px;left:22.2159%;width:40px;">
+                                <p class="g-pstyle1">Italy</p>
+                            </div>
+                            <div id="g-ai2-17" class="g-Mobile g-aiAbs g-aiPointText" style="top:25.3729%;margin-top:-5.9px;left:57.3508%;width:67px;">
+                                <p class="g-pstyle1">Costa Rica</p>
+                            </div>
+                            <div id="g-ai2-18" class="g-Mobile g-aiAbs g-aiPointText" style="top:25.9922%;margin-top:-5.9px;left:12.4307%;width:52px;">
+                                <p class="g-pstyle1">Turkey</p>
+                            </div>
+                            <div id="g-ai2-19" class="g-Mobile g-aiAbs g-aiPointText" style="top:26.6116%;margin-top:-5.9px;left:66.8307%;width:54px;">
+                                <p class="g-pstyle1">Mexico</p>
+                            </div>
+                            <div id="g-ai2-20" class="g-Mobile g-aiAbs g-aiPointText" style="top:28.1601%;margin-top:-5.9px;left:76.3443%;width:47px;">
+                                <p class="g-pstyle1">Spain</p>
+                            </div>
+                            <div id="g-ai2-21" class="g-Mobile g-aiAbs" style="top:30.0403%;left:28.0454%;width:25.6%;">
+                                <p class="g-pstyle3">A few countries liked completely unique music that you won&rsquo;t hear elsewhere</p>
+                            </div>
+                            <div id="g-ai2-22" class="g-Mobile g-aiAbs g-aiPointText" style="top:35.7476%;margin-top:-5.9px;left:12.85%;width:52px;">
+                                <p class="g-pstyle1">France</p>
+                            </div>
+                            <div id="g-ai2-23" class="g-Mobile g-aiAbs g-aiPointText" style="top:41.4769%;margin-top:-5.9px;left:23.219%;width:53px;">
+                                <p class="g-pstyle1">Poland</p>
+                            </div>
+                            <div id="g-ai2-24" class="g-Mobile g-aiAbs g-aiPointText" style="top:41.7866%;margin-top:-5.9px;left:90.8016%;width:47px;">
+                                <p class="g-pstyle1">Brazil</p>
+                            </div>
+                            <div id="g-ai2-25" class="g-Mobile g-aiAbs g-aiPointText" style="top:45.0384%;margin-top:-5.9px;left:8.174%;width:48px;">
+                                <p class="g-pstyle1">Japan</p>
+                            </div>
+                            <div id="g-ai2-26" class="g-Mobile g-aiAbs g-aiPointText" style="top:47.5159%;margin-top:-5.9px;left:80.8836%;width:54px;">
+                                <p class="g-pstyle1">Finland</p>
+                            </div>
+                            <div id="g-ai2-27" class="g-Mobile g-aiAbs g-aiPointText" style="top:47.9805%;margin-top:-5.9px;left:25.0872%;width:77px;">
+                                <p class="g-pstyle1">Netherlands</p>
+                            </div>
+                            <div id="g-ai2-28" class="g-Mobile g-aiAbs g-aiPointText" style="top:48.5999%;margin-top:-5.9px;left:38.038%;width:46px;">
+                                <p class="g-pstyle1">Israel</p>
+                            </div>
+                            <div id="g-ai2-29" class="g-Mobile g-aiAbs g-aiPointText" style="top:50.9226%;margin-top:-5.9px;left:62.2503%;width:59px;">
+                                <p class="g-pstyle1">Portugal</p>
+                            </div>
+                            <div id="g-ai2-30" class="g-Mobile g-aiAbs g-aiPointText" style="top:53.2453%;margin-top:-5.9px;left:85.9232%;width:57px;">
+                                <p class="g-pstyle1">Sweden</p>
+                            </div>
+                            <div id="g-ai2-31" class="g-Mobile g-aiAbs g-aiPointText" style="top:53.555%;margin-top:-5.9px;left:76.7018%;width:44px;">
+                                <p class="g-pstyle1">India</p>
+                            </div>
+                            <div id="g-ai2-32" class="g-Mobile g-aiAbs g-aiPointText" style="top:54.9486%;margin-top:-5.9px;left:17.2823%;width:62px;">
+                                <p class="g-pstyle1">Viet Nam</p>
+                            </div>
+                            <div id="g-ai2-33" class="g-Mobile g-aiAbs g-aiPointText" style="top:57.7358%;margin-top:-5.9px;left:35.4099%;width:58px;">
+                                <p class="g-pstyle1">Belgium</p>
+                            </div>
+                            <div id="g-ai2-34" class="g-Mobile g-aiAbs g-aiPointText" style="top:58.8197%;margin-top:-5.9px;left:42.1453%;width:78px;">
+                                <p class="g-pstyle1">Luxembourg</p>
+                            </div>
+                            <div id="g-ai2-35" class="g-Mobile g-aiAbs g-aiPointText" style="top:59.2843%;margin-top:-5.9px;left:12.6469%;width:65px;">
+                                <p class="g-pstyle1">Indonesia</p>
+                            </div>
+                            <div id="g-ai2-36" class="g-Mobile g-aiAbs g-aiPointText" style="top:60.0585%;margin-top:-5.9px;left:49.5135%;width:60px;">
+                                <p class="g-pstyle1">Hungary</p>
+                            </div>
+                            <div id="g-ai2-37" class="g-Mobile g-aiAbs g-aiPointText" style="top:60.9876%;margin-top:-5.9px;left:63.3466%;width:58px;">
+                                <p class="g-pstyle1">Bulgaria</p>
+                            </div>
+                            <div id="g-ai2-38" class="g-Mobile g-aiAbs g-aiPointText" style="top:61.4521%;margin-top:-5.9px;left:24.9586%;width:67px;">
+                                <p class="g-pstyle1">Singapore</p>
+                            </div>
+                            <div id="g-ai2-39" class="g-Mobile g-aiAbs g-aiPointText" style="top:62.8458%;margin-top:-5.9px;left:83.25%;width:71px;">
+                                <p class="g-pstyle1">Philippines</p>
+                            </div>
+                            <div id="g-ai2-40" class="g-Mobile g-aiAbs g-aiPointText" style="top:63.0006%;margin-top:-5.9px;left:53.1969%;width:61px;">
+                                <p class="g-pstyle1">Romania</p>
+                            </div>
+                            <div id="g-ai2-41" class="g-Mobile g-aiAbs g-aiPointText" style="top:63.9297%;margin-top:-5.9px;left:22.1792%;width:61px;">
+                                <p class="g-pstyle1">Malaysia</p>
+                            </div>
+                            <div id="g-ai2-42" class="g-Mobile g-aiAbs g-aiPointText" style="top:66.2524%;margin-top:-5.9px;left:87.4737%;width:60px;">
+                                <p class="g-pstyle1">Thailand</p>
+                            </div>
+                            <div id="g-ai2-43" class="g-Mobile g-aiAbs g-aiPointText" style="top:66.4072%;margin-top:-5.9px;left:58.4786%;width:53px;">
+                                <p class="g-pstyle1">Cyprus</p>
+                            </div>
+                            <div id="g-ai2-44" class="g-Mobile g-aiAbs g-aiPointText" style="top:67.646%;margin-top:-5.9px;left:41.5904%;width:58px;">
+                                <p class="g-pstyle1">Slovakia</p>
+                            </div>
+                            <div id="g-ai2-45" class="g-Mobile g-aiAbs g-aiPointText" style="top:68.5751%;margin-top:-5.9px;left:22.3891%;width:71px;">
+                                <p class="g-pstyle1">Hong Kong</p>
+                            </div>
+                            <div id="g-ai2-46" class="g-Mobile g-aiAbs g-aiPointText" style="top:69.5042%;margin-top:-5.9px;left:75.9685%;width:54px;">
+                                <p class="g-pstyle1">Iceland</p>
+                            </div>
+                            <div id="g-ai2-47" class="g-Mobile g-aiAbs g-aiPointText" style="top:70.5881%;margin-top:-5.9px;left:47.7651%;width:47px;">
+                                <p class="g-pstyle1">Malta</p>
+                            </div>
+                            <div id="g-ai2-48" class="g-Mobile g-aiAbs g-aiPointText" style="top:71.5172%;margin-top:-5.9px;left:62.4505%;width:54px;">
+                                <p class="g-pstyle1">Estonia</p>
+                            </div>
+                            <div id="g-ai2-49" class="g-Mobile g-aiAbs g-aiPointText" style="top:72.7559%;margin-top:-5.9px;left:35.8672%;width:89px;">
+                                <p class="g-pstyle1">Czech Republic</p>
+                            </div>
+                            <div id="g-ai2-50" class="g-Mobile g-aiAbs g-aiPointText" style="top:73.685%;margin-top:-5.9px;left:56.0273%;width:63px;">
+                                <p class="g-pstyle1">Lithuania</p>
+                            </div>
+                            <div id="g-ai2-51" class="g-Mobile g-aiAbs g-aiPointText" style="top:75.2335%;margin-top:-5.9px;left:31.2307%;width:73px;">
+                                <p class="g-pstyle1">Switzerland</p>
+                            </div>
+                            <div id="g-ai2-52" class="g-Mobile g-aiAbs g-aiPointText" style="top:76.6271%;margin-top:-5.9px;left:77.4133%;width:53px;">
+                                <p class="g-pstyle1">Taiwan</p>
+                            </div>
+                            <div id="g-ai2-53" class="g-Mobile g-aiAbs g-aiPointText" style="top:77.2465%;margin-top:-5.9px;left:19.3581%;width:63px;">
+                                <p class="g-pstyle1">Denmark</p>
+                            </div>
+                            <div id="g-ai2-54" class="g-Mobile g-aiAbs g-aiPointText" style="top:77.711%;margin-top:-5.9px;left:67.051%;width:48px;">
+                                <p class="g-pstyle1">Latvia</p>
+                            </div>
+                            <div id="g-ai2-55" class="g-Mobile g-aiAbs g-aiPointText" style="top:77.8659%;margin-top:-5.9px;left:45.7286%;width:76px;">
+                                <p class="g-pstyle1">South Africa</p>
+                            </div>
+                            <div id="g-ai2-56" class="g-Mobile g-aiAbs g-aiPointText" style="top:80.3434%;margin-top:-5.9px;left:50.3711%;width:61px;">
+                                <p class="g-pstyle1">Australia</p>
+                            </div>
+                            <div id="g-ai2-57" class="g-Mobile g-aiAbs g-aiPointText" style="top:81.7371%;margin-top:-5.9px;left:58.5875%;width:55px;">
+                                <p class="g-pstyle1">Canada</p>
+                            </div>
+                            <div id="g-ai2-58" class="g-Mobile g-aiAbs g-aiPointText" style="top:81.8919%;margin-top:-5.9px;left:70.6521%;width:53px;">
+                                <p class="g-pstyle1">Greece</p>
+                            </div>
+                            <div id="g-ai2-59" class="g-Mobile g-aiAbs g-aiPointText" style="top:84.6791%;margin-top:-5.9px;left:25.1672%;width:63px;">
+                                <p class="g-pstyle1">Germany</p>
+                            </div>
+                            <div id="g-ai2-60" class="g-Mobile g-aiAbs g-aiPointText" style="top:84.6791%;margin-top:-5.9px;left:49.5651%;width:80px;">
+                                <p class="g-pstyle1">New Zealand</p>
+                            </div>
+                            <div id="g-ai2-61" class="g-Mobile g-aiAbs g-aiPointText" style="top:85.9179%;margin-top:-5.9px;left:62.7747%;width:81px;">
+                                <p class="g-pstyle1">United States</p>
+                            </div>
+                            <div id="g-ai2-62" class="g-Mobile g-aiAbs g-aiPointText" style="top:86.2276%;margin-top:-5.9px;left:30.2029%;width:53px;">
+                                <p class="g-pstyle1">Austria</p>
+                            </div>
+                            <div id="g-ai2-63" class="g-Mobile g-aiAbs g-aiPointText" style="top:87.9309%;margin-top:-5.9px;left:55.5242%;width:53px;">
+                                <p class="g-pstyle1">Ireland</p>
+                            </div>
+                            <div id="g-ai2-64" class="g-Mobile g-aiAbs g-aiPointText" style="top:88.597%;margin-top:-8.2px;left:43.1102%;width:62px;">
+                                <p class="g-pstyle2">United </p>
+                                <p class="g-pstyle2">Kingdom</p>
+                            </div>
+                            <div id="g-ai2-65" class="g-Mobile g-aiAbs g-aiPointText" style="top:92.1118%;margin-top:-5.9px;left:47.3591%;width:56px;">
+                                <p class="g-pstyle1">Norway</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                    
+                    
+                <p class="chart-source">Source: Spotify's top 200 song charts for the week of June 21 to 28, 2019</p>    
+            </div>
+        </div>
+    </div>
+    <div class="story-body">
+        <p class="body-text serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="body-text serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+      
+  </body>
+</html>
