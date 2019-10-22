@@ -1,0 +1,218 @@
+If your pie is off of the side of the page, think about where 0,0 is and how to move it there.
+
+
+
+
+
+
+
+
+
+
+
+
+
+pies require two pieces: a pie (to manage the data) and an arc (to figure out the size). The pies provide the angles, the arcs provide the radii.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When building a pie chart, if you have 3 data points you'll also want 3 wedges.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Something is weird about binding data when building a pie chart! Or different, at least.
+
+
+
+
+
+
+
+
+
+
+
+normally you'd do
+
+    .data(datapoints)
+
+but when dealing with a pie, instead you do
+
+    .data(pie(datapoints))
+
+and the pie machine adds all sorts of magic to your data (well, just angles, but still)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you're doing function(d) stuff, be sure to console.log(d) to see what your data looks like! Because you're binding pie(datapoints) instead of just datapoints, they make you work a little more to get to the columns.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3 slices, so 3 wedges. 3 slices, so 3 text labels.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you position the text labels for a pie chart, usually you make a second arc (we'll call it labelArc). This arc should a little bigger than the original pie chart arc, and the inner and outer radii are the same.
+
+Instead of doing that terrible Math.cos and Math.sin stuff to position the text, you use the centroids of your labelArc in order to position your labels!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To simplify a little: add your texts in the same way you made your wedges. Then use transform and the centroid of your datapoint.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To simplify even more, this is how you should position your labels!
+
+    .attr('transform', function(d) {
+      return 'translate(' + labelArc.centroid(d) + ')'
+    })
+
+or, if you want to use template literals:
+
+    .attr('transform', function(d) {
+      return `translate(${labelArc.centroid(d)})'
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In class we usually center labels with .attr("text-anchor", "middle"), but you can also say "if it's on the right hand side of the circle, left-align. if it's on the left, right-align." That code is:
+
+    .attr("text-anchor", function(d) {
+    	if(d.startAngle > Math.PI) {
+    	  return "end"
+    	} else {
+    	  return "start"
+    	}
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If the pie slices all seem to be the same color, try console.log(d) to remind yourself what data looks like when you're making a pie graph.
+
+
+
+
+
+
+
+
+
+
