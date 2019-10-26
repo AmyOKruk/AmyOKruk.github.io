@@ -131,9 +131,14 @@ h3 {
     line-height: 150%;
 }
 
-.intro a, .follow a, figcaption a {
+.intro a, .follow a, figcaption a, .email {
     text-decoration: none;
     color: #D90057;
+}
+
+.email {
+    position: relative;
+    top: -2px;
 }
 
 .intro a:hover, .follow a:hover, figcaption a:hover {
@@ -226,6 +231,16 @@ figure img {
     width: 100%;
 }
 
+.link {
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
 figcaption {
     position: absolute;
     top: 0;
@@ -247,7 +262,7 @@ figcaption {
 }
 
 figure:hover figcaption {
-    display:block
+    display:block;
 }
 
 h4 {
@@ -901,3 +916,4 @@ footer {
 #g-chicago_ai2html-Artboard_2 .g-cstyle0 {
     font-weight:700;
 }
+
