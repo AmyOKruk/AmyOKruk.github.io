@@ -1,297 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Amy O'Kruk</title>
-    <link rel="icon" href="assets/icon-01.png">
-    <link href="https://fonts.googleapis.com/css?family=Domine:400,700|Open+Sans:400,400i,700|Roboto:400,400i,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <meta name="author" content="Amy O'Kruk">
+
+    <meta property="og:title" content="Amy O'Kruk">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amyokruk.github.io/">
+    <meta property="og:description" content="Amy O'Kruk's Portfolio Website">
+    <!-- <meta property="og:image" content="image.png"> -->
+    <link rel="icon" href="/images/sparkles.png" />
+    <!-- <link rel="icon" href="&#128200;" type="image/svg+xml"> -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <div id='wrapper'>
-        <header>
-            <h1>
-                <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, I&apos;m Amy O&apos;Kruk."]'>
-                    <span class="wrap"></span>
+  <!-- your content here... -->
+  <div class="pad pad-header">
+      <nav class="header-wrap">
+          <div class="header limiter">
+              <h1>Amy O'Kruk</h1>
+              <ul>
+                <li><a href="index.html" class="nav nav-projects">Projects</a></li>
+                <li><a href="/html/writing.html" class="nav nav-writing">Writing</a></li>
+                <li><a href="/html/art.html" class="nav nav-art">Art</a></li>
+                <li><a href="/html/about.html" class="nav nav-about">About</a></li>
+              </ul>
+
+          </div>
+      </nav>
+      <div class="pad limiter">
+          <div class="body">
+              <div class="project-wrapper">
+                <a href="/projects/project1.html" class="project">
+                    <img alt="" src="/images/haikus.png">
+                    <strong>Olympic Haikus</strong>
+                    <span>A Tokyo 2020 interactive video scrambler.</span>
                 </a>
-            </h1>
-            <p class='intro'>I'm a journalist, developer and designer who likes to make things on the internet. Right now, I'm studying data analysis and design at Columbia University's <a href="http://ledeprogram.com/">Graduate School of Journalism</a> and previously I reported for <a href="https://www.theglobeandmail.com/">The Globe and Mail</a> in Toronto, Canada. I was the Editor-in-Chief of my university's <a href="https://westerngazette.ca/">student newspaper</a> and have a deep curiosity about how art and data can intersect to elevate storytelling.</p>
-			<div class="social">
-                <a href="https://twitter.com/amyokruk?lang=en"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/amyokruk/"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/AmyOKruk/"><i class="fab fa-github-alt"></i></a>
-                <a href="mailto: amy.okruk@gmail.com"><i class="fas fa-envelope"></i></a>
-                <p class="email">amy.okruk@gmail.com</p>
-            </div>
-        </header>
-        <main>
-            <div class="viz_nav">
-                <h2>Data & Design</h2>
-            </div>
-            <section class='viz_wrapper'>
-                <ul class="gallery clearfix">
-                    <li>
-                        <figure>
-                            <a class="link" href="https://amyokruk.github.io/Storytelling/"></a>
-                            <img src="assets/heatmap.gif" alt="">
-                            <figcaption>
-                                <div class='caption'> 
-                                    <h4>From Peru to Panama, Latin America likes the same beats</h4>
-                                    <p>Scraping Spotify's top song charts<a href="https://amyokruk.github.io/Storytelling/"> to compare </a> which countries listen to the same music.</a></p>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a class="link" href="https://amyokruk.github.io/Politifact/"></a>
-                            <img src="assets/trump-obama-01.png" alt="">
-                                <figcaption>
-                                    <div class='caption'> 
-                                        <h4>Are politicians lying more today than 10 years ago?</h4>
-                                        <p>I scraped Politifact.com to <a href="https://amyokruk.github.io/Politifact/">analyze the truthfulness </a>of politicians' statements today compared to the past decade</p>
-                                    </div>
-                                </figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a class="link" href="maps.html#amazon"></a>
-                            <img src="assets/amazon-icon.png" alt="">
-                            <figcaption>
-                                <div class='caption'> 
-                                    <h4>Deforestation in the Amazon has slowed but still continues</h4>
-                                    <p>Using satellite rasters<a href="maps.html#amazon"> to map </a>areas of heavy deforestation along Brazil's eastern coast.</a></p>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                             <a class="link" href="maps.html#sanfran"></a>
-                            <img src="assets/sanfran.gif" alt="">
-                            <figcaption>
-                                <div class='caption'> 
-                                    <h4>Drug arrests tumble in years since San Francisco police shifted focus to violent crime</h4>
-                                    <p>Small multiples of <a href="maps.html#sanfran">hexbin maps</a> to show a downtrend trend in drug-related arrests in San Francisco.</a></p>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a class="link" href="https://amyokruk.github.io/Mapbox-Minnesota/"></a>
-                            <img src="assets/minnesota.gif" alt="">
-                            <figcaption>
-                                <div class='caption'> 
-                                    <h4>Retire on the water in Minneapolis</h4>
-                                    <p>A short <a href="https://amyokruk.github.io/Mapbox-Minnesota/">visual story</a> about affordable waterfront homes in Minneapolis using QGIS, Mapbox and a custom Mapbox style.</a></p>
-                                </div>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a class="link" href="https://amyokruk.github.io/D3-homework-09/homework-09.html"></a>
-                            <img src="assets/histo.png" alt="">
-                            <figcaption>
-                                <div class='caption'> 
-                                    <h4>D3 charts</h4>
-                                    <p>Bar charts, line charts, histograms.<a href="https://amyokruk.github.io/D3-homework-09/homework-09.html"> All of the charts.</a></p>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a class="link" href="https://amyokruk.github.io/hellofromearth_project/"></a>
-                            <img src="assets/alien_teaser.gif" alt="">
-                            <figcaption>
-                                <div class='caption'> 
-                                    <h4>What do we talk about when we talk to aliens?</h4>
-                                    <p>I scraped over 10,000 users submissions sent to a distant planet in 2009. <a href="https://amyokruk.github.io/hellofromearth_project/">These messages</a> reveal insights into our feelings and concerns about our planet and life beyond it.</a></p>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                                <a class="link" href="maps.html#chicago"></a>
-                            <img src="assets/chicago-3-01.png" alt="">
-                            <figcaption>                          
-                                <div class='caption'> 
-                                    <h4>Chicago’s Hispanic population becomes the largest minority group in the city</h4>
-                                    <p>A <a href="maps.html#chicago">choropleth map</a> of Chicago, one of the most segregated cities in the United States.</a></p>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a class="link" href="https://amyokruk.github.io/d3-radial-charts/docs/index.html"></a>
-                            <img src="assets/radial.png" alt="">
-                                <figcaption>
-                                    <div class='caption'> 
-                                        <h4>D3 radial charts</h4>
-                                        <p>Making<a href="https://amyokruk.github.io/d3-radial-charts/docs/index.html"> circular graphs </a> in D3, including small multiples and pie charts.</p>
-                                    </div>
-                                </figcaption>
-                        </figure>
-                    </li>
-                </ul>
-            </section>
-            <div class="viz_nav" id='articles'>
-                    <h2>Words</h2>
-                </div>
-                <section class='viz_wrapper'>
-                    <ul class="gallery clearfix">
-                        <li>
-                            <figure>
-                                <a class="link" href="assets/Globe_sample_dairy.pdf" alt=""></a>
-                                <img src="assets/dairy.jpeg" alt="">
-                                <figcaption>
-                                    <div class='caption'> 
-                                        <h4>Sudden dairy price increase leaves food-service industry scrambling to adjust</h4>
-                                        <p>A <a href="https://www.theglobeandmail.com/business/small-business/managing/article-for-food-producers-an-unexpected-dairy-price-increase-is-stirring-up/">national story</a> published on the front page of The Globe's Report on Business. The article is paywalled, so <a href="assets/Globe_sample_dairy.pdf">here's a PDF.</a></p>
-                                    </div> 
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <a class="link" href="assets/Globe_sample_cannabis_tech.pdf" alt=""></a>
-                                <img src="assets/ample.jpeg" alt="">
-                                <figcaption>
-                                    <div class='caption'> 
-                                        <h4>The rise of ‘weed tech’: Cannabis tech sector flourishes in lead up to legalization</h4>
-                                        <p>I covered business stories about an emerging industry, and <a href="https://www.theglobeandmail.com/cannabis/article-the-rise-of-weed-tech-cannabis-tech-sector-flourishes-in-lead-up-to/">this story</a> drove a dozen reader subscriptions. The article is paywalled, so <a href="assets/Globe_sample_cannabis_tech.pdf">here's a PDF.</a></p>
-                                    </div> 
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <a class="link" href="https://www.theglobeandmail.com/business/small-business/article-even-doctors-are-feeling-squeezed-by-soaring-lease-rates-in-the/"></a>
-                                <img src="assets/doc.jpeg" alt="">
-                                <figcaption>
-                                    <div class='caption'> 
-                                        <h4>Even doctors are feeling squeezed by soaring lease rates in the Vancouver area</h4>
-                                        <p>A <a href="https://www.theglobeandmail.com/business/small-business/article-even-doctors-are-feeling-squeezed-by-soaring-lease-rates-in-the/">surprising story</a> about how some Canadian family physicians are being priced out of town.</p>
-                                    </div> 
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <a class="link" href="https://www.theglobeandmail.com/canada/article-morning-update-canada-us-say-nafta-agreement-within-reach-bc/"></a>
-                                <img src="http://unsplash.it/300?image=0" alt="">
-                                <figcaption>
-                                    <div class='caption'> 
-                                        <h4>Newsletters</h4>
-                                        <p>I read and write 'em. I wrote the morning update for The Globe, which went out to thousands of subscribers. <a href="https://www.theglobeandmail.com/canada/article-morning-update-canada-us-say-nafta-agreement-within-reach-bc/">Here's an example.</a></p>
-                                    </div> 
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <a class="link" href="https://www.theglobeandmail.com/business/article-the-new-frontier-deep-sea-mining/"></a>
-                                <img src="assets/deep-sea.jpeg" alt="">
-                                <figcaption> 
-                                    <div class='caption'> 
-                                        <h4>The new frontier: deep-sea mining</h4>
-                                        <p><a href="https://www.theglobeandmail.com/business/article-the-new-frontier-deep-sea-mining/">A story </a> about how a Canadian company is leading investment in underwater mining, including an interview with the International Seabed Authority.</p>
-                                    </div> 
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <a class="link" href="https://westerngazette.ca/features/questionable-claims-high-pressure-sales-tactics-alleged-by-campus-chiropractor/article_a6ab5bb6-3c39-11e8-9fba-bb9c20eb0c3a.html"></a>
-                                <img src="assets/chiro.jpg" alt="">
-                                <figcaption>
-                                    <div class='caption'> 
-                                        <h4>Questionable claims, high-pressure sales tactics alleged by campus chiropractor patients</h4>
-                                        <p>As editor of The Gazette, I directed <a href="https://westerngazette.ca/features/questionable-claims-high-pressure-sales-tactics-alleged-by-campus-chiropractor/article_a6ab5bb6-3c39-11e8-9fba-bb9c20eb0c3a.html">an investigation</a> into the campus chiropractor. The story won a national award, and the chiropractor left campus.</p>
-                                    </div> 
-                                </figcaption>
-                            </figure>
-                        </li>
-                    </ul>
-                </section>
-            <p class='follow'>Really, you want to see more? <a href='https://www.theglobeandmail.com/authors/amy-okruk/'>Well okay, I guess!</a></p>
-        </main>
-        <footer>
-            <p>© Amy O'Kruk 2019</p>
-        </footer>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>
-        // here we go 
-    
-        var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-        };
+                <a href="/projects/project2.html
+                " class="project">
+                    <img alt="" src="/images/inauguration.jpg">
+                    <strong>Are Presidents Dumbing Down Their Speeches?</strong>
+                    <span>A data story about inaugural addresses.</span>
+                </a>
+                <a href="/projects/project3.html" class="project">
+                    <img alt="" src="/images/texas-still.png">
+                    <strong>Live Election Results Maps</strong>
+                    <span>State and regional maps for the Presidential, Senate and House 2020 elections.</span>
+                </a>
+                <a target="_blank" href="https://www.nbcchicago.com/news/local/where-illinois-stands-daily-coronavirus-numbers/2426019/" class="project">
+                    <img alt="" src="/images/illinois-covid-charts.png">
+                    <strong>Illinois Covid Dashboard</strong>
+                    <span>Charts tracking daily Covid stats in Illinois and Indiana.</span>
+                </a>
+                <a href="/projects/project5.html" class="project">
+                    <img alt="" src="/images/toxic-waste.png">
+                    <strong>The Massachusetts Toxic Waste Sites in Flood Zones</strong>
+                    <span>An interactive map for an NBC Boston investigation.</span>
+                </a>
+                <a href="/projects/project6.html" class="project">
+                    <img alt="" src="/images/flights-still.png">
+                    <strong>Flights To and From Covid Hotspots</strong>
+                    <span>A data story about Thanksgiving travel during Covid.</span>
+                </a>
+                <a href="/projects/project7.html" class="project">
+                    <img alt="" src="/images/herd-immunity.png">
+                    <strong>Many Counties Face Obstacles as US Seeks Herd Immunity</strong>
+                    <span>A data story about the vaccination effort.</span>
+                </a>
+                <a href="/projects/project8.html" class="project">
+                    <img alt="" src="/images/police.png">
+                    <strong>Police Reform After George Floyd</strong>
+                    <span>Graphics charting what changed and what didn't.</span>
+                </a>
+                <a href="/projects/project9.html" class="project">
+                    <img alt="" src="/images/amazon-map.png">
+                    <strong>Selected Maps</strong>
+                    <span>Beautiful static maps!</span>
+                </a>
+              </div>
+          </div>
 
-        TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) {
-            delta /= 2;
-        }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-            delta = this.period;
-            this.isDeleting = true;
-            if (this.loopNum + 1 === this.toRotate.length) { // add this to stop
-            return;
-            }
-        } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            this.loopNum++;
-            delta = 500;
-        }
-
-        setTimeout(function() {
-            that.tick();
-        }, delta);
-        };
-
-        window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i = 0; i < elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-            new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
-        };
-    </script>
+      </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
 </body>
-
 </html>
