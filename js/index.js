@@ -1,21 +1,14 @@
-// $('.nav-projects').css({"text-decoration":"underline"})
-
-
-
 $(document).ready(function () {
-    $('.nav-projects').addClass('nav-select');
 
-    
-    $(".nav").on('mouseenter', function(){ 
-        $(".nav").removeClass('nav-select');
-        $(this).addClass('nav-select'); })
-    $(".nav").on('mouseleave', function(){ 
-        $(this).removeClass('nav-select'); })
-
-    $(".header").on('mouseleave', function(){ 
+    function selected(){
         var url = window.location.href;
+
         var page = url.match(/[^/\\&\?]+\.\w{3,4}(?=([\?&].*$|$))/gi)
-        // $(".nav").removeClass('nav-select');
+
+        if(page==null){
+            var page = "index.html"
+        }
+          
         if(page == "index.html"){
             $(".nav-projects").addClass('nav-select');
         } else if(page == "writing.html"){
@@ -25,6 +18,19 @@ $(document).ready(function () {
         } else {
             $(".nav-about").addClass('nav-select');
         }
+    }
+
+    selected()
+
+    $(".nav").on('mouseenter', function(){ 
+        $(".nav").removeClass('nav-select');
+        $(this).addClass('nav-select'); })
+    $(".nav").on('mouseleave', function(){ 
+        $(this).removeClass('nav-select'); })
+
+    $(".header").on('mouseleave', function(){ 
+
+        selected()
 
         $(this).removeClass('nav-select'); 
     })

@@ -33,8 +33,6 @@ h1 {
     font-size: 1.2rem;
     line-height: 1.2;
     margin: 0 0 0.25em 0;
-    /* font-family: 'Playfair Display', serif; */
-    /* font-weight: 700; */
 }
 
 .header ul {
@@ -42,7 +40,6 @@ h1 {
     padding: 0;
     margin: 0;
 }
-
 
 a {
     text-decoration-skip-ink: auto;
@@ -79,9 +76,9 @@ a {
 
 .body img {
     width: 100%;
-    max-width: 640px;
+    /* max-width: 640px;
     max-height: 400px;
-    object-fit: contain;
+    object-fit: contain; */
 }
 
 .header ul {
@@ -93,11 +90,6 @@ a {
     padding-bottom: 20px;
 }
 
-/* .header {
-    max-width: 640px;
-    margin: auto;
-} */
-
 .limiter a {
     text-decoration: none;
 }
@@ -106,16 +98,9 @@ a {
     text-decoration: underline !important;
 }
 
-/* .nav:hover {
-    text-decoration: underline !important;
-} */
-
-/* @media screen and (max-width: 1024px) {
-    .header-wrap {
-        border-bottom: 1px solid #000;
-        padding-bottom: 20px;
-    }
-} */
+.header h1 a {
+    color: #111 !important;
+}
 
 .project-container {
     padding-top: 20px;
@@ -155,8 +140,6 @@ a {
     background: white;
     font-size: 18px;
     border-radius: 400px;
-    /* padding: 10px;
-    margin: 5px; */
     transition: all 0.4s ease 0s;
     color: grey;
 }
@@ -191,19 +174,10 @@ a {
 .project-description p:first-child {
     margin-top: 0;
 }
-/* 
-.ai2html {
-    padding: 20px 0;
-} */
 
-/* Project 1 */
-
-#project1-1 {
-    width: 100%;
-    background-size: cover;
-    background-image: url(/images/project-1/variant-waves-mobile.png);
-    height: 390px;
-    margin-bottom: 20px;
+.note {
+    text-align: right;
+    font-size: 14px;
 }
 
 @media screen and (min-width: 640px){
@@ -217,10 +191,6 @@ a {
     .header ul {
         width: 35%;
         justify-content: space-between;
-    }
-
-    #project1-1 {
-        background-image: url(/images/project-1/variant-waves-desk.png);
     }
 
 }
