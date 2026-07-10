@@ -35,70 +35,94 @@ function splitCSVLine(line) {
   return result;
 }
 
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"']/g, ch => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[ch]));
+}
+
 function renderProjects(projects) {
   const wrapper = document.getElementById("project-wrapper");
+  if (!wrapper) return;
   if (!projects.length) {
     wrapper.innerHTML = "<p>No projects found.</p>";
     return;
   }
-  wrapper.innerHTML = projects.map(p => `
-    <a target="_blank" href="${p.link}" class="project">
-      <img alt="${p.alt}" src="/images/main/${p.image}">
-      <strong>${p.title}</strong>
-      <span>${p.description}</span>
+  // The first row of thumbnails is above the fold; load those eagerly and
+  // let everything below lazy-load. Dimensions are hinted via CSS aspect-ratio
+  // (see .project img) so cards reserve space and don't shift as images arrive.
+  wrapper.innerHTML = projects.map((p, i) => `
+    <a target="_blank" rel="noopener" href="${escapeHTML(p.link)}" class="project">
+      <img alt="${escapeHTML(p.alt)}" src="/images/main/${escapeHTML(p.image)}"
+           loading="${i < 3 ? "eager" : "lazy"}" decoding="async">
+      <strong>${escapeHTML(p.title)}</strong>
+      <span>${escapeHTML(p.description)}</span>
     </a>
   `).join("");
 }
 
 function loadProjects() {
+  const wrapper = document.getElementById("project-wrapper");
+  if (!wrapper) return; // not on the homepage
+
   if (!SHEET_CSV_URL) {
-    document.getElementById("project-wrapper").innerHTML =
+    wrapper.innerHTML =
       "<p>Add your Google Sheet CSV URL to <code>js/index.js</code> to load projects.</p>";
     return;
   }
 
-  fetch(SHEET_CSV_URL, { cache: "no-store" })
+  // Allow the browser to reuse a cached copy so repeat visits don't re-fetch
+  // the sheet on every load.
+  fetch(SHEET_CSV_URL)
     .then(res => {
       if (!res.ok) throw new Error("Failed to fetch sheet");
       return res.text();
     })
     .then(text => renderProjects(parseCSV(text)))
     .catch(() => {
-      document.getElementById("project-wrapper").innerHTML =
+      wrapper.innerHTML =
         "<p>Couldn't load projects. Check the CSV URL in <code>js/index.js</code>.</p>";
     });
 }
 
-$(document).ready(function () {
-  loadProjects();
+function highlightNav() {
+  const match = window.location.href.match(/[^/\\&?]+\.\w{3,4}(?=([?&].*$|$))/gi);
+  const page = match ? match[0] : "index.html";
 
-  function selected() {
-    var url = window.location.href;
-    var page = url.match(/[^/\\&\?]+\.\w{3,4}(?=([\?&].*$|$))/gi);
-    if (page == null) { page = "index.html"; }
+  const map = {
+    "writing.html": ".nav-writing",
+    "art.html": ".nav-art",
+    "index.html": ".nav-projects",
+  };
+  const selector = map[page] || ".nav-about";
+  const active = document.querySelector(selector);
+  if (active) active.classList.add("nav-select");
+}
 
-    if (page == "index.html") {
-      $(".nav-projects").addClass('nav-select');
-    } else if (page == "writing.html") {
-      $(".nav-writing").addClass('nav-select');
-    } else if (page == "art.html") {
-      $(".nav-art").addClass('nav-select');
-    } else {
-      $(".nav-about").addClass('nav-select');
-    }
+function setupNavHover() {
+  const navItems = document.querySelectorAll(".nav");
+  const header = document.querySelector(".header");
+
+  navItems.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+      navItems.forEach(n => n.classList.remove("nav-select"));
+      item.classList.add("nav-select");
+    });
+    item.addEventListener("mouseleave", () => {
+      item.classList.remove("nav-select");
+    });
+  });
+
+  if (header) {
+    header.addEventListener("mouseleave", () => {
+      navItems.forEach(n => n.classList.remove("nav-select"));
+      highlightNav();
+    });
   }
+}
 
-  selected();
-
-  $(".nav").on('mouseenter', function () {
-    $(".nav").removeClass('nav-select');
-    $(this).addClass('nav-select');
-  });
-  $(".nav").on('mouseleave', function () {
-    $(this).removeClass('nav-select');
-  });
-  $(".header").on('mouseleave', function () {
-    selected();
-    $(this).removeClass('nav-select');
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  loadProjects();
+  highlightNav();
+  setupNavHover();
 });
